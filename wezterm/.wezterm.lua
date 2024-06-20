@@ -15,10 +15,12 @@ config.colors = {
 		},
 	},
 }
+
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
 config.window_background_opacity = 0.97
+
 config.keys = {
 	{
 		key = "k",
@@ -41,7 +43,9 @@ config.keys = {
 		action = wezterm.action.ScrollByPage(1),
 	},
 }
+
 config.warn_about_missing_glyphs = false
+
 config.window_frame = {
 	border_left_width = "0.2cell",
 	border_right_width = "0.2cell",
@@ -52,5 +56,7 @@ config.window_frame = {
 	border_bottom_color = "#7196E4",
 	border_top_color = "#7196E4",
 }
+
+config.window_decorations = "RESIZE"
 config.line_height = 1.4
 return config
