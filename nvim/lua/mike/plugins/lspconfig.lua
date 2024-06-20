@@ -4,7 +4,8 @@ require('mason-lspconfig').setup({
     "intelephense",
     "tsserver",
     "tailwindcss",
-    "jsonls"
+    "jsonls",
+    "emmet_language_server",
   },
 })
 
@@ -43,6 +44,8 @@ require('lspconfig').jsonls.setup({
     }
   }
 })
+
+require('lspconfig').emmet_language_server.setup({})
 
 vim.diagnostic.config({
   float = {
