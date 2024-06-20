@@ -134,7 +134,9 @@ require("lazy").setup({
     config = function()
       require('mike/plugins/whichkey')
     end
-  }
+  },
+
+  require('mike/plugins/conform')
 
 })
 
