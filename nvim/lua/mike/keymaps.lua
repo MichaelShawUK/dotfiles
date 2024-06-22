@@ -35,6 +35,16 @@ vim.keymap.set('n', '<A-k>', ':move .-2<CR>==', { desc = "Shift line up" })
 vim.keymap.set('v', '<A-j>', ":move '>+1<CR>gv=gv")
 vim.keymap.set('v', '<A-k>', ":move '<-2<CR>gv=gv")
 
+-- Insert new line at cursor position
+vim.keymap.set('n', 'K', function()
+  if (vim.api.nvim_win_get_cursor(0)[2] > 0) then
+    return 'i<CR><Esc>l'
+  else
+    return 'i<CR><Esc>'
+  end
+end, { expr = true }
+  )
+
 -- Disable arrow keys
 vim.keymap.set('n', '<left>', '')
 vim.keymap.set('n', '<right>', '')
@@ -47,13 +57,16 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = "Switch to window below" })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = "Switch to window above" })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = "Switch to right window" })
 
+-- Switch between two most recent buffers
+vim.keymap.set('n', '<C-`>', ':b#<CR>')
+
 -- Toggle neotree
 vim.keymap.set('n', '\\', ':Neotree toggle<CR>')
 
 -- LSP mappings
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'LSP: [G]o to [D]efinition' })
 vim.keymap.set('n', '<leader>lr', function() require('telescope.builtin').lsp_references() end, { desc = '[L]SP: Go to [R]eferences' })
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'LSP: Hover' })
+vim.keymap.set('n', 'H', vim.lsp.buf.hover, { desc = 'LSP: Hover' })
 vim.keymap.set('n', '<leader>ln', vim.lsp.buf.rename, { desc = '[L]SP: Re[n]ame' })
 
 -- Diagnostic mappings

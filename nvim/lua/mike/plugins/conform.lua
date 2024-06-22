@@ -17,7 +17,8 @@ return {
   opts = {
     -- Define your formatters
     formatters_by_ft = {
-      html = { "prettierd" },
+      html = { "prettier" },
+      javascript = { "prettier" }
     },
     -- Set up format-on-save
     format_on_save = { timeout_ms = 500, lsp_format = "fallback" },
