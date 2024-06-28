@@ -6,6 +6,7 @@ require('mason-lspconfig').setup({
     "tailwindcss",
     "jsonls",
     "emmet_language_server",
+    "volar",
   },
 })
 
@@ -30,7 +31,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 require('lspconfig').intelephense.setup({})
 
-require('lspconfig').tsserver.setup({})
+require('lspconfig').tsserver.setup({
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = "/home/mike/.nvm/versions/node/v18.16.0/lib/node_modules/@vue/typescript-plugin",
+        languages = { "vue" },
+      },
+    }
+  },
+  filetypes = { "vue", "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
+})
 
 require('lspconfig').tailwindcss.setup({})
 
@@ -45,7 +57,11 @@ require('lspconfig').jsonls.setup({
   }
 })
 
-require('lspconfig').emmet_language_server.setup({})
+require('lspconfig').emmet_language_server.setup({
+  filetypes = { "vue", "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact" },
+})
+
+require('lspconfig').volar.setup({})
 
 vim.diagnostic.config({
   float = {
