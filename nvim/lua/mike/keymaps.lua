@@ -61,7 +61,12 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = "Switch to right window" })
 vim.keymap.set('n', '<C-`>', ':b#<CR>')
 
 -- Toggle neotree
-vim.keymap.set('n', '\\', ':Neotree toggle<CR>')
+vim.keymap.set('n', '\\', function() 
+  if (vim.bo.filetype == 'neo-tree') then
+    return ":Neotree close<CR>"
+  end
+  return ":Neotree focus<CR>"
+end, { expr = true })
 
 -- LSP mappings
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'LSP: [G]o to [D]efinition' })
