@@ -58,5 +58,5 @@ config.window_frame = {
 }
 
 config.window_decorations = "RESIZE"
-config.line_height = 1.4
+config.line_height = 1.66
 return config

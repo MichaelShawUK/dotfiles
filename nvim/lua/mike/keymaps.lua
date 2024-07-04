@@ -28,8 +28,8 @@ vim.keymap.set('v', 'p', '"_dP')
 -- vim.keymap.set('i', ';;', '<Esc>A;')
 
 -- Move lines up or down with Alt - j/k
-vim.keymap.set('i', '<A-j>', '<Esc>:move .+1<CR>==gi')
-vim.keymap.set('i', '<A-k>', '<Esc>:move .-2<CR>==gi')
+-- vim.keymap.set('i', '<A-j>', '<Esc>:move .+1<CR>==gi')
+-- vim.keymap.set('i', '<A-k>', '<Esc>:move .-2<CR>==gi')
 vim.keymap.set('n', '<A-j>', ':move .+1<CR>==', { desc = "Shift line down" })
 vim.keymap.set('n', '<A-k>', ':move .-2<CR>==', { desc = "Shift line up" })
 vim.keymap.set('v', '<A-j>', ":move '>+1<CR>gv=gv")
