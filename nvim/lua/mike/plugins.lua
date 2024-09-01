@@ -136,7 +136,12 @@ require("lazy").setup({
     end
   },
 
-  require('mike/plugins/conform')
+  require('mike/plugins/conform'),
+
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {}
+  }
 
 })
-

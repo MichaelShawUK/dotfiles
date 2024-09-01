@@ -19,7 +19,8 @@ return {
     formatters_by_ft = {
       html = { "prettier" },
       javascript = { "prettier" },
-      vue = { "prettier" }
+      vue = { "prettier" },
+      typescriptreact = { "prettier" }
     },
     -- Set up format-on-save
     format_on_save = { timeout_ms = 500, lsp_format = "fallback" },
