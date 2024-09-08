@@ -82,13 +82,6 @@ require("lazy").setup({
   },
 
   {
-    "voldikss/vim-floaterm",
-    config = function()
-      require('mike/plugins/floaterm')
-    end
-  },
-
-  {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
       "JoosepAlviste/nvim-ts-context-commentstring",
