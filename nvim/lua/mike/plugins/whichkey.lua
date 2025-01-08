@@ -2,8 +2,8 @@ local wk = require('which-key')
 wk.setup()
 
 wk.register({
-  ['<leader>s'] = { name = '[S]earch' },
-  ['<leader>l'] = { name = '[L]SP' },
-  ['gS'] = { name = "[S]plit block" },
-  ['gJ'] = { name = "[J]oin block" },
+    { "<leader>l", group = "[L]SP" },
+    { "<leader>s", group = "[S]earch" },
+    { "gJ", group = "[J]oin block" },
+    { "gS", group = "[S]plit block" },
 })

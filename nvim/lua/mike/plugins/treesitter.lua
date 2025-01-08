@@ -22,6 +22,7 @@ configs.setup({
     "php",
     "php_only",
     "phpdoc",
+    "query",
     "regex",
     "scss",
     "sql",
@@ -34,7 +35,7 @@ configs.setup({
   sync_install = true,
 
   highlight = {
-    enable = true
+    enable = false
   },
 
   indent = {

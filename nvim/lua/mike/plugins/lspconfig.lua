@@ -2,11 +2,12 @@ require('mason').setup()
 require('mason-lspconfig').setup({
   ensure_installed = {
     "intelephense",
-    "tsserver",
+    "ts_ls",
     "tailwindcss",
     "jsonls",
     "emmet_language_server",
     "volar",
+    "clangd",
   },
 })
 
@@ -31,7 +32,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 require('lspconfig').intelephense.setup({})
 
-require('lspconfig').tsserver.setup({
+require('lspconfig').clangd.setup({})
+
+require('lspconfig').ts_ls.setup({
   init_options = {
     plugins = {
       {
